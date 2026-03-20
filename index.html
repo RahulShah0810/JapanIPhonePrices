@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone Price Scraper · Japan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root { --jp-red: #bc002d; }
+    body { background-color: #f8f9fa; font-family: -apple-system, sans-serif; }
+    .navbar { background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); }
+    .badge-japan { background-color: var(--jp-red); color: white; border-radius: 50rem; padding: 0.3em 0.8em; font-size: 0.65rem; font-weight: 700; }
+    .table thead th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; background-color: #f1f3f5; }
+    .table-bordered td, .table-bordered th { border-color: #dee2e6 !important; }
+    .card { border: none; border-radius: 12px; overflow: hidden; }
+    .text-xs { font-size: 0.75rem; }
+    .sticky-top { top: 0; z-index: 1020; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar sticky-top border-bottom shadow-sm">
+  <div class="container py-2">
+    <div class="d-flex flex-wrap justify-content-between align-items-center w-100 gap-3">
+      <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+          <h1 class="h6 mb-0 fw-bold text-dark text-uppercase">iPhone Price Scraper</h1>
+          <span class="badge-japan">JAPAN</span>
+        </div>
+        <small class="text-muted">Last Updated: <span id="lastUpdated">...</span></small>
+      </div>
+      
+      <div class="d-flex gap-2">
+        <select class="form-select form-select-sm w-auto" id="ddModel" onchange="applyFilters()">
+          <option value="all">All Models</option>
+          <option value="iphone17">iPhone 17</option>
+          <option value="iphone17air">iPhone 17 Air</option>
+          <option value="iphone17pro">iPhone 17 Pro</option>
+          <option value="iphone17promax">Pro Max</option>
+        </select>
+        <select class="form-select form-select-sm w-auto" id="ddStorage" onchange="applyFilters()">
+          <option value="all">All Storage</option>
+          <option value="128GB">128GB</option>
+          <option value="256GB">256GB</option>
+          <option value="512GB">512GB</option>
+          <option value="1TB">1TB</option>
+        </select>
+        <button class="btn btn-sm btn-outline-success d-flex align-items-center gap-1 fw-medium" onclick="window.location.reload()">
+          <i class="bi bi-arrow-clockwise"></i> Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-4">
+
+  <div class="card mb-4 shadow-sm" data-model="iphone17">
+    <div class="card-header bg-white py-3 border-0"><h2 class="h6 mb-0 fw-bold">iPhone 17</h2></div>
+    <div class="table-responsive px-3 pb-3">
+      <table class="table table-bordered table-hover align-middle mb-0 text-center">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-start" style="min-width:180px">Variant</th>
+            <th>Amazon</th><th>Yodobashi</th><th>Kakaku</th><th>Bic</th><th>Joshin</th>
+            <th class="text-success">Lowest</th><th class="text-danger">Highest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-model="iphone17" data-storage="128GB">
+            <td class="text-start">128GB (Cosmic Orange)</td>
+            <td>$792</td><td>$804</td><td>$788</td><td>$799</td><td>$795</td>
+            <td class="fw-bold text-success">$788</td><td class="fw-bold text-danger">$804</td>
+          </tr>
+          <tr data-model="iphone17" data-storage="128GB">
+            <td class="text-start">128GB (Electric Blue)</td>
+            <td>$792</td><td>$804</td><td>$786</td><td>$799</td><td>$795</td>
+            <td class="fw-bold text-success">$786</td><td class="fw-bold text-danger">$804</td>
+          </tr>
+          <tr data-model="iphone17" data-storage="256GB">
+            <td class="text-start">256GB (Black)</td>
+            <td>$926</td><td>$938</td><td>$920</td><td>$933</td><td>$929</td>
+            <td class="fw-bold text-success">$920</td><td class="fw-bold text-danger">$938</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm" data-model="iphone17air">
+    <div class="card-header bg-white py-3 border-0"><h2 class="h6 mb-0 fw-bold">iPhone 17 Air</h2></div>
+    <div class="table-responsive px-3 pb-3">
+      <table class="table table-bordered table-hover align-middle mb-0 text-center">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-start">Variant</th>
+            <th>Amazon</th><th>Yodobashi</th><th>Kakaku</th><th>Bic</th><th>Joshin</th>
+            <th class="text-success">Lowest</th><th class="text-danger">Highest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-model="iphone17air" data-storage="128GB">
+            <td class="text-start">128GB (Silver)</td>
+            <td>$859</td><td>$871</td><td>$858</td><td>$866</td><td>$862</td>
+            <td class="fw-bold text-success">$852</td><td class="fw-bold text-danger">$871</td>
+          </tr>
+          <tr data-model="iphone17air" data-storage="256GB">
+            <td class="text-start">256GB (Electric Blue)</td>
+            <td>$993</td><td>$1,005</td><td>$985</td><td>$999</td><td>$996</td>
+            <td class="fw-bold text-success">$985</td><td class="fw-bold text-danger">$1,005</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm" data-model="iphone17pro">
+    <div class="card-header bg-white py-3 border-0"><h2 class="h6 mb-0 fw-bold">iPhone 17 Pro</h2></div>
+    <div class="table-responsive px-3 pb-3">
+      <table class="table table-bordered table-hover align-middle mb-0 text-center">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-start">Variant</th>
+            <th>Amazon</th><th>Yodobashi</th><th>Kakaku</th><th>Bic</th><th>Joshin</th>
+            <th class="text-success">Lowest</th><th class="text-danger">Highest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-model="iphone17pro" data-storage="256GB">
+            <td class="text-start">256GB (Titanium)</td>
+            <td>$1,127</td><td>$1,140</td><td>$1,117</td><td>$1,134</td><td>$1,131</td>
+            <td class="fw-bold text-success">$1,117</td><td class="fw-bold text-danger">$1,140</td>
+          </tr>
+          <tr data-model="iphone17pro" data-storage="512GB">
+            <td class="text-start">512GB (Black)</td>
+            <td>$1,261</td><td class="text-muted small">N/A</td><td>$1,256</td><td>$1,268</td><td>$1,264</td>
+            <td class="fw-bold text-success">$1,256</td><td class="fw-bold text-danger">$1,268</td>
+          </tr>
+          <tr data-model="iphone17pro" data-storage="1TB">
+            <td class="text-start">1TB (Silver)</td>
+            <td>$1,463</td><td>$1,476</td><td>$1,456</td><td>$1,470</td><td>$1,466</td>
+            <td class="fw-bold text-success">$1,456</td><td class="fw-bold text-danger">$1,476</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm" data-model="iphone17promax">
+    <div class="card-header bg-white py-3 border-0"><h2 class="h6 mb-0 fw-bold">iPhone 17 Pro Max</h2></div>
+    <div class="table-responsive px-3 pb-3">
+      <table class="table table-bordered table-hover align-middle mb-0 text-center">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-start">Variant</th>
+            <th>Amazon</th><th>Yodobashi</th><th>Kakaku</th><th>Bic</th><th>Joshin</th>
+            <th class="text-success">Lowest</th><th class="text-danger">Highest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-model="iphone17promax" data-storage="256GB">
+            <td class="text-start">256GB (Black)</td>
+            <td>$1,261</td><td>$1,274</td><td>$1,251</td><td>$1,268</td><td>$1,264</td>
+            <td class="fw-bold text-success">$1,251</td><td class="fw-bold text-danger">$1,274</td>
+          </tr>
+          <tr data-model="iphone17promax" data-storage="1TB">
+            <td class="text-start">1TB (Titanium)</td>
+            <td>$1,597</td><td>$1,610</td><td>$1,587</td><td>$1,604</td><td>$1,599</td>
+            <td class="fw-bold text-success">$1,587</td><td class="fw-bold text-danger">$1,610</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Initial timestamp
+  document.getElementById('lastUpdated').textContent = new Date().toLocaleTimeString();
+
+  function applyFilters() {
+    const selModel = document.getElementById('ddModel').value;
+    const selStorage = document.getElementById('ddStorage').value;
+
+    // First: Filter all rows by storage criteria
+    document.querySelectorAll('tbody tr').forEach(row => {
+      const rowStorage = row.getAttribute('data-storage');
+      const storageMatch = (selStorage === 'all' || rowStorage === selStorage);
+      row.style.display = storageMatch ? '' : 'none';
+    });
+
+    // Second: Filter cards based on model selection and if they contain visible rows
+    document.querySelectorAll('.card[data-model]').forEach(card => {
+      const cardModel = card.getAttribute('data-model');
+      const modelMatch = (selModel === 'all' || cardModel === selModel);
+      
+      // Card remains visible only if model matches AND it still has rows showing
+      const hasVisibleRows = Array.from(card.querySelectorAll('tbody tr'))
+                                  .some(row => row.style.display !== 'none');
+
+      if (modelMatch && hasVisibleRows) {
+        card.classList.remove('d-none');
+      } else {
+        card.classList.add('d-none');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
