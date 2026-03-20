@@ -14,7 +14,6 @@
     .table thead th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; background-color: #f1f3f5; }
     .table-bordered td, .table-bordered th { border-color: #dee2e6 !important; }
     .card { border: none; border-radius: 12px; overflow: hidden; }
-    .text-xs { font-size: 0.75rem; }
     .sticky-top { top: 0; z-index: 1020; }
   </style>
 </head>
@@ -41,10 +40,10 @@
         </select>
         <select class="form-select form-select-sm w-auto" id="ddStorage" onchange="applyFilters()">
           <option value="all">All Storage</option>
-          <option value="128GB">128GB</option>
           <option value="256GB">256GB</option>
           <option value="512GB">512GB</option>
           <option value="1TB">1TB</option>
+          <option value="2TB">2TB</option>
         </select>
         <button class="btn btn-sm btn-outline-success d-flex align-items-center gap-1 fw-medium" onclick="window.location.reload()">
           <i class="bi bi-arrow-clockwise"></i> Refresh
@@ -68,21 +67,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-model="iphone17" data-storage="128GB">
-            <td class="text-start">128GB (Cosmic Orange)</td>
-            <td>$792</td><td>$804</td><td>$788</td><td>$799</td><td>$795</td>
-            <td class="fw-bold text-success">$788</td><td class="fw-bold text-danger">$804</td>
-          </tr>
-          <tr data-model="iphone17" data-storage="128GB">
-            <td class="text-start">128GB (Electric Blue)</td>
-            <td>$792</td><td>$804</td><td>$786</td><td>$799</td><td>$795</td>
-            <td class="fw-bold text-success">$786</td><td class="fw-bold text-danger">$804</td>
-          </tr>
-          <tr data-model="iphone17" data-storage="256GB">
-            <td class="text-start">256GB (Black)</td>
-            <td>$926</td><td>$938</td><td>$920</td><td>$933</td><td>$929</td>
-            <td class="fw-bold text-success">$920</td><td class="fw-bold text-danger">$938</td>
-          </tr>
+          <tr data-model="iphone17" data-storage="256GB"><td class="text-start">256GB (Black)</td><td>$926</td><td>$938</td><td>$920</td><td>$933</td><td>$929</td><td class="fw-bold text-success">$920</td><td class="fw-bold text-danger">$938</td></tr>
+          <tr data-model="iphone17" data-storage="256GB"><td class="text-start">256GB (White)</td><td>$926</td><td>$938</td><td>$921</td><td>$933</td><td>$929</td><td class="fw-bold text-success">$921</td><td class="fw-bold text-danger">$938</td></tr>
+          <tr data-model="iphone17" data-storage="256GB"><td class="text-start">256GB (Mist Blue)</td><td>$926</td><td>$938</td><td>$919</td><td>$933</td><td>$929</td><td class="fw-bold text-success">$919</td><td class="fw-bold text-danger">$938</td></tr>
+          <tr data-model="iphone17" data-storage="256GB"><td class="text-start">256GB (Sage)</td><td>$926</td><td>$938</td><td>$922</td><td>$933</td><td>$929</td><td class="fw-bold text-success">$922</td><td class="fw-bold text-danger">$938</td></tr>
+          <tr data-model="iphone17" data-storage="256GB"><td class="text-start">256GB (Lavender)</td><td>$926</td><td>$938</td><td>$920</td><td>$933</td><td>$929</td><td class="fw-bold text-success">$920</td><td class="fw-bold text-danger">$938</td></tr>
+          <tr data-model="iphone17" data-storage="512GB"><td class="text-start">512GB (Black)</td><td>$1,060</td><td>$1,073</td><td>$1,055</td><td>$1,067</td><td>$1,064</td><td class="fw-bold text-success">$1,055</td><td class="fw-bold text-danger">$1,073</td></tr>
+          <tr data-model="iphone17" data-storage="512GB"><td class="text-start">512GB (White)</td><td>$1,060</td><td>$1,073</td><td>$1,056</td><td>$1,067</td><td>$1,064</td><td class="fw-bold text-success">$1,056</td><td class="fw-bold text-danger">$1,073</td></tr>
+          <tr data-model="iphone17" data-storage="512GB"><td class="text-start">512GB (Mist Blue)</td><td>$1,060</td><td>$1,073</td><td>$1,054</td><td>$1,067</td><td>$1,064</td><td class="fw-bold text-success">$1,054</td><td class="fw-bold text-danger">$1,073</td></tr>
+          <tr data-model="iphone17" data-storage="512GB"><td class="text-start">512GB (Sage)</td><td>$1,060</td><td>$1,073</td><td>$1,057</td><td>$1,067</td><td>$1,064</td><td class="fw-bold text-success">$1,057</td><td class="fw-bold text-danger">$1,073</td></tr>
+          <tr data-model="iphone17" data-storage="512GB"><td class="text-start">512GB (Lavender)</td><td>$1,060</td><td>$1,073</td><td>$1,055</td><td>$1,067</td><td>$1,064</td><td class="fw-bold text-success">$1,055</td><td class="fw-bold text-danger">$1,073</td></tr>
         </tbody>
       </table>
     </div>
@@ -100,16 +94,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-model="iphone17air" data-storage="128GB">
-            <td class="text-start">128GB (Silver)</td>
-            <td>$859</td><td>$871</td><td>$858</td><td>$866</td><td>$862</td>
-            <td class="fw-bold text-success">$852</td><td class="fw-bold text-danger">$871</td>
-          </tr>
-          <tr data-model="iphone17air" data-storage="256GB">
-            <td class="text-start">256GB (Electric Blue)</td>
-            <td>$993</td><td>$1,005</td><td>$985</td><td>$999</td><td>$996</td>
-            <td class="fw-bold text-success">$985</td><td class="fw-bold text-danger">$1,005</td>
-          </tr>
+          <tr data-model="iphone17air" data-storage="256GB"><td class="text-start">256GB (Sky Blue)</td><td>$993</td><td>$1,005</td><td>$988</td><td>$999</td><td>$996</td><td class="fw-bold text-success">$988</td><td class="fw-bold text-danger">$1,005</td></tr>
+          <tr data-model="iphone17air" data-storage="256GB"><td class="text-start">256GB (Light Gold)</td><td>$993</td><td>$1,005</td><td>$989</td><td>$999</td><td>$996</td><td class="fw-bold text-success">$989</td><td class="fw-bold text-danger">$1,005</td></tr>
+          <tr data-model="iphone17air" data-storage="256GB"><td class="text-start">256GB (Cloud White)</td><td>$993</td><td>$1,005</td><td>$987</td><td>$999</td><td>$996</td><td class="fw-bold text-success">$987</td><td class="fw-bold text-danger">$1,005</td></tr>
+          <tr data-model="iphone17air" data-storage="256GB"><td class="text-start">256GB (Space Black)</td><td>$993</td><td>$1,005</td><td>$990</td><td>$999</td><td>$996</td><td class="fw-bold text-success">$990</td><td class="fw-bold text-danger">$1,005</td></tr>
+          <tr data-model="iphone17air" data-storage="512GB"><td class="text-start">512GB (Sky Blue)</td><td>$1,127</td><td>$1,140</td><td>$1,122</td><td>$1,134</td><td>$1,131</td><td class="fw-bold text-success">$1,122</td><td class="fw-bold text-danger">$1,140</td></tr>
+          <tr data-model="iphone17air" data-storage="512GB"><td class="text-start">512GB (Light Gold)</td><td>$1,127</td><td>$1,140</td><td>$1,123</td><td>$1,134</td><td>$1,131</td><td class="fw-bold text-success">$1,123</td><td class="fw-bold text-danger">$1,140</td></tr>
+          <tr data-model="iphone17air" data-storage="512GB"><td class="text-start">512GB (Cloud White)</td><td>$1,127</td><td>$1,140</td><td>$1,121</td><td>$1,134</td><td>$1,131</td><td class="fw-bold text-success">$1,121</td><td class="fw-bold text-danger">$1,140</td></tr>
+          <tr data-model="iphone17air" data-storage="512GB"><td class="text-start">512GB (Space Black)</td><td>$1,127</td><td>$1,140</td><td>$1,124</td><td>$1,134</td><td>$1,131</td><td class="fw-bold text-success">$1,124</td><td class="fw-bold text-danger">$1,140</td></tr>
+          <tr data-model="iphone17air" data-storage="1TB"><td class="text-start">1TB (Sky Blue)</td><td>$1,328</td><td>$1,341</td><td>$1,323</td><td>$1,335</td><td>$1,332</td><td class="fw-bold text-success">$1,323</td><td class="fw-bold text-danger">$1,341</td></tr>
+          <tr data-model="iphone17air" data-storage="1TB"><td class="text-start">1TB (Light Gold)</td><td>$1,328</td><td>$1,341</td><td>$1,324</td><td>$1,335</td><td>$1,332</td><td class="fw-bold text-success">$1,324</td><td class="fw-bold text-danger">$1,341</td></tr>
+          <tr data-model="iphone17air" data-storage="1TB"><td class="text-start">1TB (Cloud White)</td><td>$1,328</td><td>$1,341</td><td>$1,322</td><td>$1,335</td><td>$1,332</td><td class="fw-bold text-success">$1,322</td><td class="fw-bold text-danger">$1,341</td></tr>
+          <tr data-model="iphone17air" data-storage="1TB"><td class="text-start">1TB (Space Black)</td><td>$1,328</td><td>$1,341</td><td>$1,325</td><td>$1,335</td><td>$1,332</td><td class="fw-bold text-success">$1,325</td><td class="fw-bold text-danger">$1,341</td></tr>
         </tbody>
       </table>
     </div>
@@ -127,21 +123,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-model="iphone17pro" data-storage="256GB">
-            <td class="text-start">256GB (Titanium)</td>
-            <td>$1,127</td><td>$1,140</td><td>$1,117</td><td>$1,134</td><td>$1,131</td>
-            <td class="fw-bold text-success">$1,117</td><td class="fw-bold text-danger">$1,140</td>
-          </tr>
-          <tr data-model="iphone17pro" data-storage="512GB">
-            <td class="text-start">512GB (Black)</td>
-            <td>$1,261</td><td class="text-muted small">N/A</td><td>$1,256</td><td>$1,268</td><td>$1,264</td>
-            <td class="fw-bold text-success">$1,256</td><td class="fw-bold text-danger">$1,268</td>
-          </tr>
-          <tr data-model="iphone17pro" data-storage="1TB">
-            <td class="text-start">1TB (Silver)</td>
-            <td>$1,463</td><td>$1,476</td><td>$1,456</td><td>$1,470</td><td>$1,466</td>
-            <td class="fw-bold text-success">$1,456</td><td class="fw-bold text-danger">$1,476</td>
-          </tr>
+          <tr data-model="iphone17pro" data-storage="256GB"><td class="text-start">256GB (Silver)</td><td>$1,127</td><td>$1,140</td><td>$1,117</td><td>$1,134</td><td>$1,131</td><td class="fw-bold text-success">$1,117</td><td class="fw-bold text-danger">$1,140</td></tr>
+          <tr data-model="iphone17pro" data-storage="256GB"><td class="text-start">256GB (Cosmic Orange)</td><td>$1,127</td><td>$1,140</td><td>$1,118</td><td>$1,134</td><td>$1,131</td><td class="fw-bold text-success">$1,118</td><td class="fw-bold text-danger">$1,140</td></tr>
+          <tr data-model="iphone17pro" data-storage="256GB"><td class="text-start">256GB (Deep Blue)</td><td>$1,127</td><td>$1,140</td><td>$1,116</td><td>$1,134</td><td>$1,131</td><td class="fw-bold text-success">$1,116</td><td class="fw-bold text-danger">$1,140</td></tr>
+          <tr data-model="iphone17pro" data-storage="512GB"><td class="text-start">512GB (Silver)</td><td>$1,261</td><td>$1,274</td><td>$1,256</td><td>$1,268</td><td>$1,264</td><td class="fw-bold text-success">$1,256</td><td class="fw-bold text-danger">$1,274</td></tr>
+          <tr data-model="iphone17pro" data-storage="512GB"><td class="text-start">512GB (Cosmic Orange)</td><td>$1,261</td><td>$1,274</td><td>$1,257</td><td>$1,268</td><td>$1,264</td><td class="fw-bold text-success">$1,257</td><td class="fw-bold text-danger">$1,274</td></tr>
+          <tr data-model="iphone17pro" data-storage="512GB"><td class="text-start">512GB (Deep Blue)</td><td>$1,261</td><td>$1,274</td><td>$1,255</td><td>$1,268</td><td>$1,264</td><td class="fw-bold text-success">$1,255</td><td class="fw-bold text-danger">$1,274</td></tr>
+          <tr data-model="iphone17pro" data-storage="1TB"><td class="text-start">1TB (Silver)</td><td>$1,463</td><td>$1,476</td><td>$1,456</td><td>$1,470</td><td>$1,466</td><td class="fw-bold text-success">$1,456</td><td class="fw-bold text-danger">$1,476</td></tr>
+          <tr data-model="iphone17pro" data-storage="1TB"><td class="text-start">1TB (Cosmic Orange)</td><td>$1,463</td><td>$1,476</td><td>$1,457</td><td>$1,470</td><td>$1,466</td><td class="fw-bold text-success">$1,457</td><td class="fw-bold text-danger">$1,476</td></tr>
+          <tr data-model="iphone17pro" data-storage="1TB"><td class="text-start">1TB (Deep Blue)</td><td>$1,463</td><td>$1,476</td><td>$1,455</td><td>$1,470</td><td>$1,466</td><td class="fw-bold text-success">$1,455</td><td class="fw-bold text-danger">$1,476</td></tr>
         </tbody>
       </table>
     </div>
@@ -159,16 +149,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-model="iphone17promax" data-storage="256GB">
-            <td class="text-start">256GB (Black)</td>
-            <td>$1,261</td><td>$1,274</td><td>$1,251</td><td>$1,268</td><td>$1,264</td>
-            <td class="fw-bold text-success">$1,251</td><td class="fw-bold text-danger">$1,274</td>
-          </tr>
-          <tr data-model="iphone17promax" data-storage="1TB">
-            <td class="text-start">1TB (Titanium)</td>
-            <td>$1,597</td><td>$1,610</td><td>$1,587</td><td>$1,604</td><td>$1,599</td>
-            <td class="fw-bold text-success">$1,587</td><td class="fw-bold text-danger">$1,610</td>
-          </tr>
+          <tr data-model="iphone17promax" data-storage="256GB"><td class="text-start">256GB (Silver)</td><td>$1,261</td><td>$1,274</td><td>$1,251</td><td>$1,268</td><td>$1,264</td><td class="fw-bold text-success">$1,251</td><td class="fw-bold text-danger">$1,274</td></tr>
+          <tr data-model="iphone17promax" data-storage="256GB"><td class="text-start">256GB (Cosmic Orange)</td><td>$1,261</td><td>$1,274</td><td>$1,252</td><td>$1,268</td><td>$1,264</td><td class="fw-bold text-success">$1,252</td><td class="fw-bold text-danger">$1,274</td></tr>
+          <tr data-model="iphone17promax" data-storage="256GB"><td class="text-start">256GB (Deep Blue)</td><td>$1,261</td><td>$1,274</td><td>$1,250</td><td>$1,268</td><td>$1,264</td><td class="fw-bold text-success">$1,250</td><td class="fw-bold text-danger">$1,274</td></tr>
+          <tr data-model="iphone17promax" data-storage="512GB"><td class="text-start">512GB (Silver)</td><td>$1,396</td><td>$1,409</td><td>$1,389</td><td>$1,403</td><td>$1,399</td><td class="fw-bold text-success">$1,389</td><td class="fw-bold text-danger">$1,409</td></tr>
+          <tr data-model="iphone17promax" data-storage="512GB"><td class="text-start">512GB (Cosmic Orange)</td><td>$1,396</td><td>$1,409</td><td>$1,390</td><td>$1,403</td><td>$1,399</td><td class="fw-bold text-success">$1,390</td><td class="fw-bold text-danger">$1,409</td></tr>
+          <tr data-model="iphone17promax" data-storage="512GB"><td class="text-start">512GB (Deep Blue)</td><td>$1,396</td><td>$1,409</td><td>$1,388</td><td>$1,403</td><td>$1,399</td><td class="fw-bold text-success">$1,388</td><td class="fw-bold text-danger">$1,409</td></tr>
+          <tr data-model="iphone17promax" data-storage="1TB"><td class="text-start">1TB (Silver)</td><td>$1,597</td><td>$1,610</td><td>$1,587</td><td>$1,604</td><td>$1,599</td><td class="fw-bold text-success">$1,587</td><td class="fw-bold text-danger">$1,610</td></tr>
+          <tr data-model="iphone17promax" data-storage="1TB"><td class="text-start">1TB (Cosmic Orange)</td><td>$1,597</td><td>$1,610</td><td>$1,588</td><td>$1,604</td><td>$1,599</td><td class="fw-bold text-success">$1,588</td><td class="fw-bold text-danger">$1,610</td></tr>
+          <tr data-model="iphone17promax" data-storage="1TB"><td class="text-start">1TB (Deep Blue)</td><td>$1,597</td><td>$1,610</td><td>$1,586</td><td>$1,604</td><td>$1,599</td><td class="fw-bold text-success">$1,586</td><td class="fw-bold text-danger">$1,610</td></tr>
+          <tr data-model="iphone17promax" data-storage="2TB"><td class="text-start">2TB (Silver)</td><td>$1,866</td><td>$1,879</td><td>$1,855</td><td>$1,873</td><td>$1,869</td><td class="fw-bold text-success">$1,855</td><td class="fw-bold text-danger">$1,879</td></tr>
+          <tr data-model="iphone17promax" data-storage="2TB"><td class="text-start">2TB (Cosmic Orange)</td><td>$1,866</td><td>$1,879</td><td>$1,856</td><td>$1,873</td><td>$1,869</td><td class="fw-bold text-success">$1,856</td><td class="fw-bold text-danger">$1,879</td></tr>
+          <tr data-model="iphone17promax" data-storage="2TB"><td class="text-start">2TB (Deep Blue)</td><td>$1,866</td><td>$1,879</td><td>$1,854</td><td>$1,873</td><td>$1,869</td><td class="fw-bold text-success">$1,854</td><td class="fw-bold text-danger">$1,879</td></tr>
         </tbody>
       </table>
     </div>
@@ -177,34 +169,23 @@
 </main>
 
 <script>
-  // Initial timestamp
   document.getElementById('lastUpdated').textContent = new Date().toLocaleTimeString();
 
   function applyFilters() {
     const selModel = document.getElementById('ddModel').value;
     const selStorage = document.getElementById('ddStorage').value;
 
-    // First: Filter all rows by storage criteria
     document.querySelectorAll('tbody tr').forEach(row => {
       const rowStorage = row.getAttribute('data-storage');
       const storageMatch = (selStorage === 'all' || rowStorage === selStorage);
       row.style.display = storageMatch ? '' : 'none';
     });
 
-    // Second: Filter cards based on model selection and if they contain visible rows
     document.querySelectorAll('.card[data-model]').forEach(card => {
       const cardModel = card.getAttribute('data-model');
       const modelMatch = (selModel === 'all' || cardModel === selModel);
-      
-      // Card remains visible only if model matches AND it still has rows showing
-      const hasVisibleRows = Array.from(card.querySelectorAll('tbody tr'))
-                                  .some(row => row.style.display !== 'none');
-
-      if (modelMatch && hasVisibleRows) {
-        card.classList.remove('d-none');
-      } else {
-        card.classList.add('d-none');
-      }
+      const hasVisibleRows = Array.from(card.querySelectorAll('tbody tr')).some(row => row.style.display !== 'none');
+      if (modelMatch && hasVisibleRows) { card.classList.remove('d-none'); } else { card.classList.add('d-none'); }
     });
   }
 </script>
